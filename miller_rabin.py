@@ -3,7 +3,8 @@
 
 # More info: https://en.wikipedia.org/wiki/Miller-Rabin_primality_test
 
-# This program takes any integer n as an input and determines if that number is likely to be prime and does that in polynomial-time. There is also optional to input k which is determines the accuracy of the result. Default value for k is 5.
+# This program takes any integer n as an input and determines if that number is likely to be prime and does that in polynomial-time.
+# There is also optional to input k which is determines the accuracy of the result. Default value for k is 5.
 
 
 import random
@@ -22,7 +23,8 @@ def miller_rabin_algo(d,n):
     if x == 1 or x == n-1:
         return True
 
-    # We run while loop until d value is n-1. If by then x has still not satisfied the conditions then we know that n is not prime. Every iteration we double the d and square the x.
+    # We run while loop until d value is n-1. If by then x has still not satisfied the conditions then we know that n is not prime.
+    # Every iteration we double the d and square the x.
     while d != n-1:
     
         x = x * x % n
@@ -54,7 +56,10 @@ def is_likely_prime(n,k=5):
         s += 1
         d //= 2
 
-    # This for loop will run the actual algorithm k times. Larger k means more accurate since the "a" value is random every time and if we randomly pick "a" value that is a strong liar for our n, then the algorithm will return false positive. If during any iteration of the algorithm we get the result False then we can be sure that the n is not prime. If we go through many iterations of the algorithm and always end up with True, then it is highly likely that n is prime.
+    # This for loop will run the actual algorithm k times. Larger k means more accurate since the "a" value is random every time and if we
+    # randomly pick "a" value that is a strong liar for our n, then the algorithm will return false positive.
+    # If during any iteration of the algorithm we get the result False then we can be sure that the n is not prime.
+    # If we go through many iterations of the algorithm and always end up with True, then it is highly likely that n is prime.
     for i in range(k):
 
         if miller_rabin_algo(d,n) == False:
