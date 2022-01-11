@@ -25,6 +25,4 @@ def order_of_element(p, element):
     
     return order        # Function returns the order of element modulo p.
 
-
-
-print(order_of_element(64,5))
+# print(order_of_element(90000006,5))
