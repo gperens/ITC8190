@@ -67,5 +67,4 @@ def is_likely_prime(n,k=5):
 
     return True
 
-
-print(is_likely_prime(97,5))
+# print(is_likely_prime(97,5))
